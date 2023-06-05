@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Magnetism : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject magneticField;
+    public GameObject player;
+
+
     void Start()
     {
-        
+        magneticField = GameObject.FindGameObjectWithTag("Magnetic Field");
+        magneticField = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //set condition if specific object has contacted collidor
+
+        //object should seek out player
+        //increment carry count(weight) +1
     }
 }

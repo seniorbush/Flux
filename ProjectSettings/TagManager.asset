@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Magnetic FIeld
   layers:
   - Default
   - TransparentFX
