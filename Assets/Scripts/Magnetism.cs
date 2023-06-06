@@ -2,21 +2,33 @@ using UnityEngine;
 
 public class Magnetism : MonoBehaviour
 {
-    public GameObject magneticField;
-    public GameObject player;
+    public float speed = 6f; // The speed at which the object moves towards the player
+    private Transform player; // Reference to the player's transform
+    private bool isStuck = false; // Flag to indicate if the object is stuck to the player
 
 
-    void Start()
+    private void Start()
     {
-        magneticField = GameObject.FindGameObjectWithTag("Magnetic Field");
-        magneticField = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        //set condition if specific object has contacted collidor
+        if (other.CompareTag("Player"))
+        {
+            // add functionallity so object sticks too player
+            // perhaps special collider abover players head for contact point
+            MoveTowardsPlayer();
+        }
+    }
 
-        //object should seek out player
-        //increment carry count(weight) +1
+    private void MoveTowardsPlayer()
+    {
+        Vector3 direction = player.position - transform.position;
+        direction.Normalize();
+
+        // Move the object towards the player
+        transform.position += direction * speed * Time.deltaTime;
     }
 }
+
