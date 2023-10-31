@@ -9,7 +9,7 @@ public class Magnetism : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Contact").transform;
     }
 
     private void OnTriggerStay(Collider other)

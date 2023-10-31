@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Magnetic FIeld
+  - Contact
   layers:
   - Default
   - TransparentFX
