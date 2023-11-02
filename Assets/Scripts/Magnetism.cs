@@ -20,6 +20,7 @@ public class Magnetism : MonoBehaviour
             // perhaps special collider abover players head for contact point
             MoveTowardsPlayer();
         }
+
     }
 
     private void MoveTowardsPlayer()
@@ -30,5 +31,8 @@ public class Magnetism : MonoBehaviour
         // Move the object towards the player
         transform.position += direction * speed * Time.deltaTime;
     }
+
+
+
 }
 
